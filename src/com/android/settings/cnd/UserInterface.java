@@ -110,6 +110,9 @@ public class UserInterface extends SettingsPreferenceFragment implements Prefere
             }
         }
 
+        mRecentKillAll = (CheckBoxPreference) findPreference(PREF_RECENT_KILL_ALL);
+	mRecentKillAll.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.RECENT_KILL_ALL_BUTTON, 0) == 1);
 
         mVolumeKeyCursorControl = (ListPreference) findPreference(VOLUME_KEY_CURSOR_CONTROL);
         mVolumeKeyCursorControl.setOnPreferenceChangeListener(this);
